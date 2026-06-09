@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #f8fafc;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f8fafc;
+  color: #020617;
+  font-family: Arial, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
