@@ -8,10 +8,10 @@ type NavItem = {
 
 const navItems: NavItem[] = [
     { to: "/", label: "Início", end: true },
-    { to: "/componentes", label: "Componentes" },
-    { to: "/formularios", label: "Formulários" },
+    { to: "/components", label: "Componentes" },
+    { to: "/forms", label: "Formulários" },
     { to: "/api-use-effect", label: "API e useEffect" },
-    { to: "/rotas", label: "Rotas" },
+    { to: "/routes", label: "Rotas" },
 ];
 
 export function AppLayout() {
