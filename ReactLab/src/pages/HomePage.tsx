@@ -1,12 +1,12 @@
-import arrowLeftIcon from "../assets/icons/arrow-left-turn.svg";
-import boltIcon from "../assets/icons/bolt.svg";
-import cloudIcon from "../assets/icons/cloud.svg";
-import documentIcon from "../assets/icons/document.svg";
-import layersIcon from "../assets/icons/layers.svg";
-import listIcon from "../assets/icons/list.svg";
-import puzzleIcon from "../assets/icons/puzzle.svg";
-import usersIcon from "../assets/icons/users.svg";
-import { CardComponent } from "../components/CardComponent/CardComponent";
+import arrowLeftIcon from "../assets/icons/arrow-left-turn.svg?react";
+import boltIcon from "../assets/icons/bolt.svg?react";
+import cloudIcon from "../assets/icons/cloud.svg?react";
+import documentIcon from "../assets/icons/document.svg?react";
+import layersIcon from "../assets/icons/layers.svg?react";
+import listIcon from "../assets/icons/list.svg?react";
+import puzzleIcon from "../assets/icons/puzzle.svg?react";
+import usersIcon from "../assets/icons/users.svg?react";
+import { CardComponentProp } from "../components/CardComponent/CardComponentProp";
 import { Badge } from "../components/ui/Badge";
 import { IconBox } from "../components/ui/IconBox";
 
@@ -14,49 +14,49 @@ const cardsInfo = [
     {
         title: "Componentes & Props",
         description: "Criação de componentes, passagem de dados e composição básica.",
-        iconSrc: puzzleIcon,
+        icon: puzzleIcon,
         iconBoxClassName: "bg-violet-100 text-violet-600",
     },
     {
         title: "State & Eventos",
         description: "Estado local, eventos e atualização da interface.",
-        iconSrc: boltIcon,
+        icon: boltIcon,
         iconBoxClassName: "bg-emerald-100 text-emerald-600",
     },
     {
         title: "Formulários",
         description: "Inputs controlados, validação simples e useReducer.",
-        iconSrc: documentIcon,
+        icon: documentIcon,
         iconBoxClassName: "bg-blue-100 text-blue-600",
     },
     {
         title: "Listas & CRUD",
         description: "Renderização de listas, keys e operações de CRUD.",
-        iconSrc: listIcon,
+        icon: listIcon,
         iconBoxClassName: "bg-orange-100 text-orange-500",
     },
     {
         title: "API & useEffect",
         description: "Busca de dados, loading, erro e ciclo de efeitos.",
-        iconSrc: cloudIcon,
+        icon: cloudIcon,
         iconBoxClassName: "bg-violet-100 text-violet-600",
     },
     {
         title: "Estado Compartilhado",
         description: "Context API para dados usados por mais de uma tela.",
-        iconSrc: usersIcon,
+        icon: usersIcon,
         iconBoxClassName: "bg-emerald-100 text-emerald-600",
     },
     {
         title: "Rotas",
         description: "Navegação entre páginas com React Router.",
-        iconSrc: arrowLeftIcon,
+        icon: arrowLeftIcon,
         iconBoxClassName: "bg-blue-100 text-blue-600",
     },
     {
         title: "Componentes Reutilizáveis",
         description: "Button, Input, Card e padrões simples de reutilização.",
-        iconSrc: layersIcon,
+        icon: layersIcon,
         iconBoxClassName: "bg-orange-100 text-orange-500",
     },
 ] as const;
@@ -85,12 +85,12 @@ export function HomePage() {
             </div>
 
             <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-                {cardsInfo.map(({ title, description, iconSrc, iconBoxClassName }, index) => (
-                    <CardComponent
+                {cardsInfo.map(({ title, description, icon, iconBoxClassName }, index) => (
+                    <CardComponentProp
                         key={`${title}-${index}`}
                         title={title}
                         description={description}
-                        iconSrc={iconSrc}
+                        icon={icon}
                         iconBoxClassName={iconBoxClassName}
                     />
                 ))}
@@ -98,9 +98,7 @@ export function HomePage() {
 
             <aside className="mt-8 rounded-3xl border border-sky-100 bg-slate-50/80 px-5 py-5 shadow-[0_8px_24px_rgba(15,23,42,0.04)] sm:px-6 sm:py-6">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-                    <IconBox boxClassName="rounded-full border-4 border-blue-500 bg-white text-blue-500" iconClassName="size-0">
-                        <span className="text-2xl font-semibold leading-none">i</span>
-                    </IconBox>
+                    <IconBox boxClassName="rounded-full border-4 border-blue-500 bg-white text-blue-500" iconClassName="size-0" Icon={arrowLeftIcon} />
                     <div className="min-w-0">
                         <h3 className="text-2xl font-semibold tracking-[-0.03em] text-slate-950 sm:text-3xl">
                             Sobre o projeto
