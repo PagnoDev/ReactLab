@@ -1,9 +1,11 @@
 const colorClasses = {
-    blue: "bg-blue-500 hover:bg-blue-700",
-    red: "bg-red-500 hover:bg-red-700",
-    white: "bg-gray-500 hover:bg-gray-700",
-};
+    purple: "bg-purple-500 hover:bg-purple-700 text-white",
+    gray: "bg-gray-400 hover:bg-gray-700 text-white",
+    yellow: "bg-yellow-500 hover:bg-yellow-700 text-white",
+    red: "outline outline-2 outline-red-500 text-red-500 hover:bg-red-500 hover:text-white",
 
+};
+    
 interface ButtonConfig {
     title: string;
     color: keyof typeof colorClasses;
@@ -16,7 +18,7 @@ export function ButtonProp({ title, color, onAction }: ButtonConfig) {
 
     return (
         <div>
-            <button className={`${selectedColor} text-white font-bold py-2 px-4 rounded`} onClick={onAction}>
+            <button className={`${selectedColor} font-bold py-2 px-4 rounded-lg`} onClick={onAction}>
                 {title}
             </button>
         </div>
