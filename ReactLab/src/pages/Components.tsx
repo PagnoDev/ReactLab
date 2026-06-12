@@ -11,9 +11,6 @@ export function Components() {
     const [description, setDescription] = useState("Lorem ipsum, dolor sit amet consectetur adipisicing elit.");
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
-    const [alertType, setAlertType] = useState<"success" | "error" | "warning" | "info">("success");
-    const [alertIsOpen, setAlertIsOpen] = useState(false);
-
     const [alerts, setAlerts] = useState<AlertData[]>([]);
 
 
