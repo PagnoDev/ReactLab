@@ -7,7 +7,7 @@ type BoxProps = {
 
 export function Box({ children, extraClasses = "" }: BoxProps) {
     return (
-        <article className={`${extraClasses}`}>
+        <article className={`${extraClasses} p-4`}>
             {children}
         </article>
     );
