@@ -1,5 +1,5 @@
-import arrowRightIcon from "../../assets/icons/arrow-right.svg?react";
-import { IconBox } from "../ui/IconBox";
+import arrowRightIcon from "../assets/icons/arrow-right.svg?react";
+import { IconBox } from "./ui/IconBox";
 
 type CardComponentProp = {
     title: string;

@@ -6,7 +6,8 @@ import layersIcon from "../assets/icons/layers.svg?react";
 import listIcon from "../assets/icons/list.svg?react";
 import puzzleIcon from "../assets/icons/puzzle.svg?react";
 import usersIcon from "../assets/icons/users.svg?react";
-import { CardComponentProp } from "../components/CardComponent/CardComponentProp";
+
+import { CardComponentProp } from "../components/CardComponentProp";
 import { Badge } from "../components/ui/Badge";
 import { IconBox } from "../components/ui/IconBox";
 
