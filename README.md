@@ -8,7 +8,7 @@ Projeto pessoal para praticar React na transição de Angular para React. Funcio
 - TypeScript
 - Vite
 - Tailwind CSS v4
-- React Router 7
+- React Router 7 
 - vite-plugin-svgr (importa os SVG como componente React)
 
 ## Como rodar
