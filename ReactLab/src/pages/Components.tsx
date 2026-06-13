@@ -4,7 +4,7 @@ import { Box } from "../components/ui/Box";
 import { ButtonProp } from "../components/ui/ButtonProp";
 import { IconBox } from "../components/ui/IconBox";
 import { ModalComponent } from "../components/ModalComponent";
-import { Alert, type AlertData, type AlertType } from "../components/ui/Alert/Alert";
+import { type AlertData, type AlertType } from "../components/ui/Alert/Alert";
 import { AlertContainer } from "../components/ui/Alert/AlertContainer";
 
 export function Components() {
