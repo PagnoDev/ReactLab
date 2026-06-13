@@ -1,150 +1,100 @@
-﻿# React Lab
+# React Lab
 
-Projeto pessoal criado para apoiar minha transição de Angular para React.
+Projeto pessoal para praticar React na transição de Angular para React. Funciona como um catálogo visual, onde cada seção implementa uma funcionalidade independente focada em um conceito essencial do ecossistema. O foco é exercitar React, TypeScript e Tailwind construindo componentes e telas de verdade.
 
-A ideia deste repositório é funcionar como um laboratório prático, onde cada seção da aplicação explora um conceito essencial do ecossistema React de forma simples, visual e incremental.
+## Stack
 
-## Objetivo
-
-Este projeto existe para me ajudar a:
-
-- trocar a mentalidade de Angular pela composição de interface em React
-- praticar construção de telas a partir de componentes pequenos e reutilizáveis
-- evoluir aos poucos, registrando na interface os conceitos já estudados
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS v4
+- React Router 7
+- vite-plugin-svgr (importa os SVG como componente React)
 
 ## Como rodar
 
-A aplicação principal está dentro da pasta `ReactLab`.
-
-### Instalação
+Requisitos: Node 20+ e npm.
 
 ```bash
-cd ReactLab
 npm install
+npm run dev      # servidor de desenvolvimento
+npm run build    # build de produção
+npm run preview  # serve o build localmente
+npm run lint     # ESLint
 ```
 
-### Ambiente de desenvolvimento
+O app sobe em `http://localhost:5173`.
 
-```bash
-npm run dev
+## Estrutura
+
+```
+src/
+  layouts/        AppLayout (sidebar de navegação + Outlet)
+  pages/          uma página por seção
+  components/
+    ui/           componentes reutilizáveis (Box, Badge, ButtonProp, IconBox)
+      Inputs/     família de inputs controlados
+      Alert/      Alert e AlertContainer (sistema de toast)
+    ModalComponent, CardComponentProp
+  assets/icons/   biblioteca de ícones SVG
 ```
 
-### Build de produção
+## Seções implementadas
 
-```bash
-npm run build
-```
+### Componentes (`/components`)
+Vitrine de componentes reutilizáveis em uso.
 
-### Preview local da build
+- **Modal** controlado por estado, com fechamento por ESC e por clique no fundo, e trava do scroll da página (useEffect com cleanup).
+- **Alerts / Toast** empilháveis no canto, com tipos (sucesso, aviso, erro) e auto-dismiss por timer. A lista é gerenciada com estado imutável, adicionando com spread e removendo com filter.
+- **Buttons** com variantes de cor.
+- **Input controlado** que atualiza um texto na tela em tempo real.
 
-```bash
-npm run preview
-```
+### Formulários (`/forms`)
+Duas abordagens de estado lado a lado.
 
-### Lint
+- Um campo simples com **useState**.
+- Um formulário completo com **useReducer** (actions `SET_FIELD` e `RESET`), cobrindo texto, select, multiselect, radio, checkbox e textarea.
+- Um painel ao lado mostra o estado do formulário **atualizando em tempo real**.
 
-```bash
-npm run lint
-```
+### Família de inputs controlados
+Componentes de formulário próprios, todos controlados via `value` e `onChange`.
 
-## Parte técnica
+- `InputText`, `InputTextBox` (textarea), `InputSelect`
+- `InputMultiSelect` com dropdown próprio, chips de seleção e fechamento ao clicar fora (useRef + useEffect)
+- `InputCheckbox`, `InputRadio` (agrupado por `name`), `InputToggle`
 
-O projeto está usando atualmente:
+### Componentes base reutilizáveis
+`Box` (container com children), `CardComponentProp`, `Badge`, `ButtonProp` (com mapa de variantes de cor) e `IconBox`.
 
-- `React 19`
-- `TypeScript`
-- `Vite`
-- `Tailwind CSS`
-- `React Router DOM`
-- `ESLint`
+## Conceitos de React já praticados
 
-Também já existem no setup:
+- `useState`, `useReducer` e `useRef`
+- `useEffect` com função de cleanup (ESC do modal, timer do alert, clique fora do multiselect)
+- Composição com `children`
+- Componentes controlados
+- Listas com `key` e estado imutável (spread, filter)
+- Callbacks via props (`onChange`, `onAction`, `onClose`)
+- Renderização condicional
+- Variantes de componente e tipagem com TypeScript (interfaces, `ComponentType`, `keyof typeof`, `Record`)
 
-- `@vitejs/plugin-react`
-- `typescript-eslint`
-- `eslint-plugin-react-hooks`
-- `eslint-plugin-react-refresh`
-- `sass`
+## Próximas seções
 
-## O que já foi praticado
+- **Rotas** (`/routes`) hoje é um esqueleto, vai crescer com rotas aninhadas, parâmetros e lazy loading
+- **API e useEffect** já aparece no menu, falta a página, com consumo de API e estados de loading e erro
+- **Estado compartilhado** com Context API
+- **Listas e CRUD**
 
-Até agora o foco foi principalmente em componentização.
+## Ferramentas e práticas pendentes
 
-Já foi trabalhado:
+Stack planejada que ainda não entrou no projeto.
 
-- criação de componentes React com TypeScript
-- composição de componentes para montar a Home
-- extração de elementos reutilizáveis de interface, como `Badge` e `IconBox`
-- criação de um `CardComponent` reutilizável com props
-- organização de ícones SVG em `assets`
-- estilização com Tailwind CSS
+- [ ] React Query (TanStack Query) para data fetching
+- [ ] Zustand para estado global
+- [ ] cva + tailwind-merge para variantes de componentes
+- [ ] Storybook para documentar os componentes
+- [ ] Testes com Vitest e React Testing Library
+- [ ] CI/CD com GitHub Actions e deploy na Vercel
 
-## Estrutura atual
+## Status
 
-Hoje a Home já apresenta um catálogo visual com cards para os temas que serão estudados no projeto:
-
-- `Componentes & Props`
-- `State & Eventos`
-- `Formulários`
-- `Listas & CRUD`
-- `API & useEffect`
-- `Estado Compartilhado`
-- `Rotas`
-- `Componentes Reutilizáveis`
-
-Mesmo que nem todas essas seções estejam implementadas ainda, elas já servem como mapa da evolução do estudo.
-
-## Plano visual das telas
-
-Os layouts de referência do projeto estão na pasta `Docs/Design das Telas`.
-
-Prévia das telas:
-
-### Dashboard
-
-![Dashboard](<Docs/Design das Telas/Dashboard.png>)
-
-### Componentes
-
-![Componentes](<Docs/Design das Telas/Componentes.png>)
-
-### Formulários
-
-![Formulários](<Docs/Design das Telas/Formulários.png>)
-
-### Listas e CRUD
-
-![Listas e CRUD](<Docs/Design das Telas/Listas e CRUD.png>)
-
-### API & useEffect
-
-![API & useEffect](<Docs/Design das Telas/API & UseEffect.png>)
-
-### Estado Compartilhado
-
-![Estado Compartilhado](<Docs/Design das Telas/Estado Compartilhado.png>)
-
-### Rotas
-
-![Rotas](<Docs/Design das Telas/Rotas.png>)
-
-Essas telas servem como direção visual e funcional do projeto, mas não devem ser tratadas como especificação rígida.
-
-Durante o desenvolvimento, o design pode sofrer ajustes de estrutura, conteúdo, hierarquia visual, componentes e detalhes de interação conforme o estudo em React evoluir.
-
-## Próximos passos
-
-Os próximos estudos devem expandir a base atual com temas como:
-
-- props e composição
-- estado local
-- eventos
-- formulários
-- listas
-- consumo de API
-- contexto
-- rotas
-
-## Resumo
-
-Este repositório não é só uma vitrine de componentes. Ele é um ambiente de prática para consolidar a mudança de Angular para React com foco em entendimento real, evolução gradual e reaproveitamento de componentes.
+Em desenvolvimento. As seções de Componentes e Formulários já estão completas e ricas. Rotas é um esqueleto, e as demais seções do catálogo seguem o roadmap.
