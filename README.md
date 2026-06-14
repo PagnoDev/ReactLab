@@ -2,6 +2,8 @@
 
 Projeto pessoal para praticar React na transição de Angular para React. Funciona como um catálogo visual, onde cada seção implementa uma funcionalidade independente focada em um conceito essencial do ecossistema. O foco é exercitar React, TypeScript e Tailwind construindo componentes e telas de verdade.
 
+O projeto em seu estado mais recente de desenvolvimento se encontra hospedado na Vercel e já é possível [acessar](reactlab-blue.vercel.app) e acompanhar o desenvolvimento
+
 ## Stack
 
 - React 19
