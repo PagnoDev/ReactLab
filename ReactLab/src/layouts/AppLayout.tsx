@@ -10,7 +10,7 @@ const navItems: NavItem[] = [
     { to: "/", label: "Início", end: true },
     { to: "/components", label: "Componentes" },
     { to: "/forms", label: "Formulários" },
-    { to: "/api-use-effect", label: "API e useEffect" },
+    { to: "/api-demo", label: "API e useEffect" },
     { to: "/routes", label: "Rotas" },
 ];
 

@@ -5,7 +5,7 @@ interface InputProps {
     onChange?: (value: string) => void;
 }
 
-export function InputTextBox({ value, placeholder, classes, onChange }: InputProps) {
+export function InputTextArea({ value, placeholder, classes, onChange }: InputProps) {
     return (
         <textarea
             placeholder={placeholder}

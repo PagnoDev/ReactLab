@@ -7,6 +7,7 @@ import { FormPage } from "./pages/FormPage";
 import { RoutesPage } from "./pages/RoutesPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { Components } from "./pages/Components";
+import { APIDemo } from "./pages/APIDemo";
 
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="forms" element={<FormPage />} />
         <Route path="routes" element={<RoutesPage />} />
         <Route path="components" element={<Components />} />
+        <Route path="api-demo" element={<APIDemo />} />
         
         <Route path="*" element={<NotFoundPage />} />
       </Route>

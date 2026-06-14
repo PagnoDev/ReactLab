@@ -1,7 +1,7 @@
 import { useReducer, useState } from "react";
 import { Box } from "../components/ui/Box";
 import { InputText } from "../components/ui/Inputs/InputText.tsx";
-import { InputTextBox } from "../components/ui/Inputs/InputTextBox.tsx";
+import { InputTextArea } from "../components/ui/Inputs/InputTextArea.tsx";
 import { InputRadio } from "../components/ui/Inputs/InputRadio.tsx";
 import { InputSelect } from "../components/ui/Inputs/InputSelect.tsx";
 import { InputCheckbox } from "../components/ui/Inputs/InputCheckbox.tsx";
@@ -175,7 +175,7 @@ export function FormPage() {
                     </div>
                     <div className="flex flex-col gap-3 col-span-2 text-lg font-medium text-slate-700">
                         <span className="text-sm text-slate-500"><b>Observações: </b></span>
-                        <InputTextBox placeholder="Reducer" value={state.observations} onChange={(value) => dispatch({ type: "SET_FIELD", field: "observations", value: value })} />
+                        <InputTextArea placeholder="Reducer" value={state.observations} onChange={(value) => dispatch({ type: "SET_FIELD", field: "observations", value: value })} />
                     </div>
                     <div className="flex justify-end gap-3 col-span-2 text-lg font-medium text-slate-700">
                         <ButtonProp title="Salvar" color="purple" onAction={() => alert("Formulário salvo com sucesso!")} />
